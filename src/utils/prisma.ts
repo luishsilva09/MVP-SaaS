@@ -1,5 +1,3 @@
-// lib/prisma.ts (ou onde você estiver criando o cliente)
-
 import { PrismaClient } from "@/generated/prisma"
 declare global {
     // Permite que o cliente seja compartilhado no modo dev (Next.js faz HMR e recria módulos várias vezes)
