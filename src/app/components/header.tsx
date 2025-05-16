@@ -6,7 +6,6 @@ import { Session } from 'next-auth'
 import { signOut } from 'next-auth/react'
 
 
-
 interface Props {
     session: Session | null
 }
