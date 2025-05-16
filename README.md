@@ -1,6 +1,7 @@
 # README - MVP -SaaS
 
 Deploy : https://www.luisdevfullstack.fun/
+Não consegui configurar o app do facebook para funcionar no deploy, localmente foi possivel testar e acessar
 
 ## **Desafio**
 
