@@ -58,7 +58,7 @@ export default async function Profile() {
 
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" id="email" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" value={session?.user?.email} />
+                            <input type="email" id="email" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" value={session?.user?.email || ''} />
                         </div>
                         <div>
                             <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone</label>

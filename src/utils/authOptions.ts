@@ -1,10 +1,12 @@
-import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { compare } from "bcryptjs";
 import prisma from "@/utils/prisma";
+import type { JWT } from "next-auth/jwt";
+import type { Session, User } from "next-auth";
+import type { Account } from "next-auth";
 
 
 export const authOptions = {
@@ -55,7 +57,13 @@ export const authOptions = {
         strategy: "jwt" as const
     },
     callbacks: {
-        async jwt({ token, user }) {
+        async jwt({
+            token,
+            user,
+        }: {
+            token: JWT;
+            user?: User;
+        }): Promise<JWT> {
             if (user) {
                 token.id = user.id;
                 token.email = user.email;
@@ -63,15 +71,27 @@ export const authOptions = {
             return token;
         },
 
-        async session({ session, token }) {
+        async session({
+            session,
+            token,
+        }: {
+            session: Session;
+            token: JWT;
+        }): Promise<Session> {
             if (session?.user && token?.id) {
-                session.user.id = token.id;
+                session.user.id = token.id as string;
                 session.user.email = token.email ?? session.user.email;
             }
             return session;
         },
 
-        async signIn({ user, account }) {
+        async signIn({
+            user,
+            account,
+        }: {
+            user: User;
+            account: Account | null;
+        }): Promise<boolean> {
             if (!account) return false;
 
             if (account.provider !== "credentials") {
