@@ -1,6 +1,7 @@
 # README - MVP -SaaS
 
 Deploy : https://www.luisdevfullstack.fun/
+
 Não consegui configurar o app do facebook para funcionar no deploy, localmente foi possivel testar e acessar
 
 ## **Desafio**
@@ -67,7 +68,8 @@ Você deverá construir um MVP funcional (mínimo produto viável) para uma plat
 - Validação de credenciais com hash (bcrypt)
 - Páginas customizadas para login
 - Pagina de recuperação de senha
-- Envio de email lde reset de senha
+- Envio de email de reset de senha
+- Listagens de cards
 
 ## Estrutura de arquivos
 
@@ -114,7 +116,8 @@ FACEBOOK_CLIENT_ID="id-facebook"
 FACEBOOK_CLIENT_SECRET="secret-facebook"
 NEXTAUTH_URL="url aplicacao"
 NEXTAUTH_EMAIL="email from para reset senha"
-RESEND_API_KEY="api de envio de emails"
+EMAIL_FROM=
+EMAIL_PASSWORD=
 ```
 
 ## Rodando localmente
@@ -136,4 +139,4 @@ npm run dev
 # ou
 yarn dev
 ```
-5 - Acesse http://localhost:3000/login
+5 - Acesse http://localhost:3000/
