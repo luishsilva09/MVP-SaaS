@@ -8,16 +8,16 @@ Você deverá construir um MVP funcional (mínimo produto viável) para uma plat
 
 **1. Autenticação e Gestão de Usuário**
 
-- Cadastro/Login com e-mail e login social (Google/Facebook)
-- Recuperação de senha
+- ~~Cadastro/Login com e-mail e login social (Google/Facebook)~~  
+- ~~Recuperação de senha~~ 
 - Tela de edição de perfil (nome, contato, imagem, etc.)
 - Controle de plano com integração ao Mercado Pago
 
 **2. Catálogo Visual de Campanhas**
 
-- Listagem visual com cards dinâmicos (grande, médio, carrossel)
+- ~~Listagem visual com cards dinâmicos (grande, médio, carrossel)~~ 
 - Organização por seções: Novas, Destaques, Mais Usadas
-- Detalhes de campanha: título, objetivo, público, métricas
+- ~~Detalhes de campanha: título, objetivo, público, métricas~~ 
 - Prévia de assets (Landing Page, PDF, vídeo, etc.)
 - Texto persuasivo + botão “Selecionar campanha”
 
@@ -44,6 +44,9 @@ Você deverá construir um MVP funcional (mínimo produto viável) para uma plat
 - Catálogo de vídeos organizados por categoria
 - Player com controle de progresso
 - Recomendação inteligente baseada no uso
+
+# Itens implementados
+
 ## Tecnologias utilizadas
 - Next.js (App Router)
 - NextAuth.js (versão 4.x)
