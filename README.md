@@ -1,5 +1,7 @@
 # README - MVP -SaaS
 
+Deploy : https://www.luisdevfullstack.fun/
+
 ## **Desafio**
 
 Você deverá construir um MVP funcional (mínimo produto viável) para uma plataforma SaaS com foco em campanhas personalizadas e geração de landing pages com links exclusivos.
@@ -54,7 +56,7 @@ Você deverá construir um MVP funcional (mínimo produto viável) para uma plat
 - PostgreSQL (ou outro banco relacional)
 - Providers OAuth: Google, Facebook
 - Bcrypt para hash e validação de senha
-- Resend (para envio de e-mails, opcional)
+- Nodemailer (para envio de e-mails, opcional)
 
 ## Funcionalidades adicionadas
 - Login com e-mail e senha (Credentials Provider)
@@ -62,8 +64,9 @@ Você deverá construir um MVP funcional (mínimo produto viável) para uma plat
 - Criação e gerenciamento de sessões no banco de dados
 - Callbacks customizados para personalizar sessão e sign-in
 - Validação de credenciais com hash (bcrypt)
-- Middleware para proteger rotas (exemplo não incluso aqui)
 - Páginas customizadas para login
+- Pagina de recuperação de senha
+- Envio de email lde reset de senha
 
 ## Estrutura de arquivos
 
