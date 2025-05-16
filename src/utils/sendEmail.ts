@@ -1,12 +1,25 @@
-import { Resend } from 'resend';
+import nodemailer from "nodemailer";
 
-export async function sendResetEmail(email: string, token: string) {
-    const resend = new Resend(process.env.RESEND_API_KEY);
+export const sendEmail = async ({
+    to,
+    token
+}: {
+    to: string;
+    token: string;
+}) => {
+    const transporter = nodemailer.createTransport({
+        host: "smtp.hostinger.com",
+        port: 465,
+        secure: true, // use TLS com porta 465
+        auth: {
+            user: process.env.EMAIL_FROM,
+            pass: process.env.EMAIL_PASSWORD,
+        },
+    });
     const resetUrl = `${process.env.NEXTAUTH_URL}/reset-password?token=${token}`;
-    const emailFrom = process.env.NEXTAUTH_EMAIL || ''
-    await resend.emails.send({
-        from: emailFrom,
-        to: email,
+    const mailOptions = {
+        from: `"MVP-SaaS" <${process.env.EMAIL_FROM}>`,
+        to: to,
         subject: 'Reset Password',
         html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -21,8 +34,10 @@ export async function sendResetEmail(email: string, token: string) {
         <p>Se você não solicitou esta alteração, pode ignorar este e-mail.</p>
         <p style="color: #888;">Este link expira em 1 hora.</p>
         <br/>
-        <p>Atenciosamente,<br/>Equipe SeuSite</p>
+        <p>Atenciosamente,<br/>MVP-SaaS</p>
       </div>
     `
-    });
-}
+    };
+
+    await transporter.sendMail(mailOptions);
+};

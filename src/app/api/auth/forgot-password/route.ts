@@ -2,7 +2,8 @@
 import { NextResponse } from "next/server";
 import prisma from "@/utils/prisma";
 import crypto from "crypto";
-import { sendResetEmail } from "@/utils/sendResetEmail";
+import { sendEmail } from "@/utils/sendEmail";
+
 
 export async function POST(req: Request) {
     const { email } = await req.json();
@@ -23,7 +24,10 @@ export async function POST(req: Request) {
         },
     });
 
-    await sendResetEmail(user.email, token);
+    await sendEmail({
+        to: email, token: token,
+    });
+
 
     return NextResponse.json({ success: true });
 }

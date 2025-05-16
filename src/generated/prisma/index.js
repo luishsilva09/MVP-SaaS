@@ -205,11 +205,12 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "postgresql://mvp-db_owner:npg_boZO4SqIW2hA@ep-cold-tree-a4nu3yrh-pooler.us-east-1.aws.neon.tech/mvp-db?sslmode=require"
+        "value": null
       }
     }
   },

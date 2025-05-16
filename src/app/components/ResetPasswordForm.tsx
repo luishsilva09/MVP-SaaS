@@ -55,6 +55,7 @@ export default function ResetPasswordForm() {
     };
 
     return (
+        <body>
         <div className="flex items-center justify-center min-h-screen px-4 bg-gray-50">
             <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
                 <h2 className="text-2xl font-bold mb-6 text-center">Redefinir Senha</h2>
@@ -94,5 +95,6 @@ export default function ResetPasswordForm() {
                 </button>
             </form>
         </div>
+        </body>
     );
 }

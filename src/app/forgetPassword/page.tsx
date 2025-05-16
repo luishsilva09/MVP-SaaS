@@ -62,7 +62,7 @@ export default function ForgetPassword() {
                             placeholder="Enter email address"
                         />
                     </label>
-
+                    <br />
                     <button
                         type="submit"
                         disabled={loading}
