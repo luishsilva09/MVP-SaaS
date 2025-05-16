@@ -66,3 +66,12 @@ model VerificationToken {
   @@unique([identifier, token])
   @@map("verification_tokens")
 }
+
+model Campaign {
+  id        String   @id @default(uuid())
+  title     String
+  objective String
+  audience  String
+  metrics   String
+  createdAt DateTime @default(now())
+}
